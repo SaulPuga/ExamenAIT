@@ -1,6 +1,6 @@
-package Repositories;
+package com.AIT.examen.Repositories;
 
-import Models.DriverModel;
+import com.AIT.examen.Models.DriverModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

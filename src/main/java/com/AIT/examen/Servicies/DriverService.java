@@ -1,8 +1,7 @@
-package Servicies;
+package com.AIT.examen.Servicies;
 
-import Models.DriverModel;
-import Models.OrderModel;
-import Repositories.IDriverRepository;
+import com.AIT.examen.Models.DriverModel;
+import com.AIT.examen.Repositories.IDriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

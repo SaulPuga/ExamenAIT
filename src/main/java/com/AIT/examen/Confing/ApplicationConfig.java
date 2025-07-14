@@ -1,6 +1,6 @@
-package Confing;
+package com.AIT.examen.Confing;
 
-import Repositories.IUserRepository;
+import com.AIT.examen.Repositories.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,25 +20,28 @@ public class ApplicationConfig {
     private final IUserRepository iUserRepository;
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration confing) throws Exception {
-        return  confing.getAuthenticationManager();
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception
+    {
+        return config.getAuthenticationManager();
     }
 
-    public AuthenticationProvider authenticationProvider(){
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+    @Bean
+    public AuthenticationProvider authenticationProvider()
+    {
+        DaoAuthenticationProvider authenticationProvider= new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(userDetailService());
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         return authenticationProvider;
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public UserDetailsService userDetailService(){
-        return username -> iUserRepository.findbyUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    public UserDetailsService userDetailService() {
+        return username -> iUserRepository.findByUsername(username)
+                .orElseThrow(()-> new UsernameNotFoundException("User not fournd"));
     }
 }

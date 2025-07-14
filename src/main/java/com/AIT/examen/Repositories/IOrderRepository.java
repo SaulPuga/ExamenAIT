@@ -1,6 +1,6 @@
-package Repositories;
+package com.AIT.examen.Repositories;
 
-import Models.OrderModel;
+import com.AIT.examen.Models.OrderModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

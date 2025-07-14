@@ -1,7 +1,7 @@
-package Servicies;
+package com.AIT.examen.Servicies;
 
-import Models.OrderModel;
-import Repositories.IOrderRepository;
+import com.AIT.examen.Models.OrderModel;
+import com.AIT.examen.Repositories.IOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

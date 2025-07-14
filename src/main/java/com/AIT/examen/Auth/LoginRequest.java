@@ -1,4 +1,4 @@
-package Auth;
+package com.AIT.examen.Auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

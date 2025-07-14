@@ -1,16 +1,12 @@
-package Controllers;
+package com.AIT.examen.Controllers;
 
-import Models.DriverModel;
-import Models.OrderModel;
-import Servicies.DriverService;
+import com.AIT.examen.Models.DriverModel;
+import com.AIT.examen.Servicies.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Driver;
-import java.util.Optional;
-
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1")
 public class DriverController {
 
     @Autowired

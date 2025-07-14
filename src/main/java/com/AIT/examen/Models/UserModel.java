@@ -1,4 +1,4 @@
-package Models;
+package com.AIT.examen.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,45 +17,39 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 public class UserModel implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    @GeneratedValue
+    Integer id;
+    @Basic
     @Column(nullable = false)
-    String userName;
-    String lastName;
-    String firstName;
+    String username;
+    @Column(nullable = false)
+    String lastname;
+    String firstname;
+    String country;
     String password;
     @Enumerated(EnumType.STRING)
     Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority((role.name())));
     }
-
-    @Override
-    public String getUsername() {
-        return "";
-    }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     @Override
     public boolean isEnabled() {
         return true;

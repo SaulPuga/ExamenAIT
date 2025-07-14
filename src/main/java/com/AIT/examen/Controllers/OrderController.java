@@ -1,14 +1,14 @@
-package Controllers;
+package com.AIT.examen.Controllers;
 
-import Models.OrderModel;
-import Servicies.OrderService;
+import com.AIT.examen.Models.OrderModel;
+import com.AIT.examen.Servicies.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1")
 public class OrderController {
 
     @Autowired

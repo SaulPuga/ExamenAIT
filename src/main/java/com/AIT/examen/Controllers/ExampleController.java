@@ -1,4 +1,4 @@
-package Controllers;
+package com.AIT.examen.Controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
